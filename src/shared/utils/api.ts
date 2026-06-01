@@ -1,0 +1,13 @@
+// API 기본 설정 — 백엔드 엔드포인트 변경 시 이 파일만 수정
+const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000'
+
+export const API = {
+  bots: `${BASE_URL}/api/v1/bots`,
+} as const
+
+// 표준 응답 타입
+export type ApiResponse<T> = {
+  success: boolean
+  data: T
+  message: string
+}
