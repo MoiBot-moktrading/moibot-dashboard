@@ -3,6 +3,8 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:8000'
 
 export const API = {
   bots: `${BASE_URL}/api/v1/bots`,
+  botStart: (id: number) => `${BASE_URL}/api/v1/bots/${id}/start`,
+  botStop: (id: number) => `${BASE_URL}/api/v1/bots/${id}/stop`,
 } as const
 
 // 표준 응답 타입
