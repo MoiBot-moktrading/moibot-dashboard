@@ -9,21 +9,22 @@ export type Bot = {
   status: 'running' | 'stopped'
 }
 
-// 체결 거래 이력
+// 체결 거래 이력 (API 응답 snake_case)
 export type Trade = {
   id: number
-  botId: number
+  bot_id: number
   side: 'buy' | 'sell'
   price: number
   amount: number
-  executedAt: string
+  executed_at: string
 }
 
-// 포트폴리오 스냅샷
+// 포트폴리오 스냅샷 (API 응답 snake_case)
 export type Portfolio = {
-  botId: number
+  id: number
+  bot_id: number
   balance: number
   position: number
   pnl: number
-  snapshotAt: string
+  snapshot_at: string
 }

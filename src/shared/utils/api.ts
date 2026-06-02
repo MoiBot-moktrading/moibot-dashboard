@@ -5,6 +5,8 @@ export const API = {
   bots: `${BASE_URL}/api/v1/bots`,
   botStart: (id: number) => `${BASE_URL}/api/v1/bots/${id}/start`,
   botStop: (id: number) => `${BASE_URL}/api/v1/bots/${id}/stop`,
+  portfolio: (id: number) => `${BASE_URL}/api/v1/portfolio/${id}`,
+  trades: (id: number) => `${BASE_URL}/api/v1/trades/${id}`,
 } as const
 
 // 표준 응답 타입

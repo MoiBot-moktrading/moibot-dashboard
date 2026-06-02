@@ -1,5 +1,6 @@
 // 봇 목록 카드 컴포넌트 — 시작/중지 버튼 포함
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { Link } from '@tanstack/react-router'
 import { API } from '@/shared/utils/api'
 import type { Bot } from '@/shared/types'
 import type { ApiResponse } from '@/shared/utils/api'
@@ -40,7 +41,13 @@ export function BotCard({ bot }: BotCardProps) {
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-xl p-5 flex flex-col gap-3 hover:border-cyan-500/40 transition-colors">
       <div className="flex items-start justify-between">
-        <h3 className="text-white font-semibold text-lg">{bot.name}</h3>
+        <Link
+          to="/bots/$botId"
+          params={{ botId: String(bot.id) }}
+          className="text-white font-semibold text-lg hover:text-cyan-400 transition-colors"
+        >
+          {bot.name}
+        </Link>
         <span className={`text-xs font-medium px-2 py-1 rounded-full ${statusStyle}`}>
           {isRunning ? '실행 중' : '정지'}
         </span>
